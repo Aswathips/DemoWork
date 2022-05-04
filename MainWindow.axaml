@@ -5,8 +5,8 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="DemoApp.MainWindow"
         Title="DemoApp">
-    Terms and Conditions Form.....	
-	<Panel>
+	<StackPanel>
+		<TextBlock>Terms and Conditions Form.....</TextBlock>
 		<Button VerticalAlignment="Center" HorizontalAlignment="Center" Click="btn_Click">Click Me</Button>
-	</Panel>
+	</StackPanel>
 </Window>
