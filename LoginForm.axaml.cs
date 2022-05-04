@@ -1,5 +1,7 @@
+using System.ComponentModel;
 using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
 
 namespace DemoApp
@@ -17,6 +19,17 @@ namespace DemoApp
         private void InitializeComponent()
         {
             AvaloniaXamlLoader.Load(this);
+        }
+
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            if (App.Current.ApplicationLifetime is ClassicDesktopStyleApplicationLifetime desktop)
+            {
+                desktop.MainWindow = new MainWindow();
+                desktop.MainWindow.Show();
+            }
+            
+            base.OnClosing(e);
         }
     }
 }
