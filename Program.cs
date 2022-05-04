@@ -15,21 +15,8 @@ namespace DemoApp
         [STAThread]
         public static void Main(string[] args)
         {
-            string dir = @"E:\temp\Demo";
-            if (Directory.Exists(dir))
-            {
-                Debug.WriteLine("Directory exists");
-                LoginForm form = new();        //Throw Exception.
-                                               //Could not CreateWindow(): IWindowingPlatform is not registered.
-                form.Show();                             
-            }
-            else
-            {
-                Debug.WriteLine("Directory not exists");
-                BuildAvaloniaApp()
-                 .StartWithClassicDesktopLifetime(args);
-               
-            }
+            BuildAvaloniaApp()
+                .StartWithClassicDesktopLifetime(args);
         }
            
 
